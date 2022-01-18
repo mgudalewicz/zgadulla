@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:zgadulla/easy/easyLevel.dart';
 import 'package:zgadulla/homePage/homePage.dart';
 
 class WinPage extends StatelessWidget {
@@ -19,6 +21,15 @@ class WinPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Text(
+              'ilość prób',
+              style: GoogleFonts.lato(fontSize: 20),
+            ),
+            Text(
+              number.toString(),
+              style: GoogleFonts.lato(fontSize: 20),
+            ),
+            const SizedBox(height: 82),
             Center(
               child: Container(
                 margin: const EdgeInsets.all(40.0),

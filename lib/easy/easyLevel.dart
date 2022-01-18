@@ -2,6 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zgadulla/win/winPage.dart';
+
+int number = 0;
 
 class EasyLevel extends StatefulWidget {
   EasyLevel({
@@ -13,10 +16,9 @@ class EasyLevel extends StatefulWidget {
 }
 
 class _EasyLevelState extends State<EasyLevel> {
-  var result = 'Buu';
+  var result = '';
   var answer = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  int number = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +53,11 @@ class _EasyLevelState extends State<EasyLevel> {
                     } else if (int.parse(value) > widget.random1) {
                       number += 1;
                       result = "za dużo!";
+                      return 'Spróbuj jeszcze raz';
                     } else if (int.parse(value) == widget.random1) {
                       number += 1;
-                      result = "Brawo! Zgadłeś!";
+                      result = 'Brawo!';
+                      return 'wygrałeś!';
                     }
                     return null;
                   },
@@ -76,11 +80,19 @@ class _EasyLevelState extends State<EasyLevel> {
                     const SnackBar(content: Text('Processing Data')),
                   );
                 }
-                setState(() {});
-                if (result == "Brawo!") {}
+                setState(() {
+                  if (result == 'Brawo!') {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => const WinPage(),
+                      ),
+                    );
+                  }
+                });
+                answer.clear();
               },
             ),
-            Text(widget.random1.toString()),
+            const Text('Jest to próba numer:'),
             Text(number.toString()),
           ],
         ),
