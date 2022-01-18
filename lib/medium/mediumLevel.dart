@@ -25,7 +25,7 @@ class _MediumLevelState extends State<MediumLevel> {
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text("Poziom: \nŁatwy"),
+        title: const Text("Poziom: \nŚredni"),
       ),
       body: Form(
         key: _formKey,
@@ -66,7 +66,7 @@ class _MediumLevelState extends State<MediumLevel> {
                     return null;
                   },
                   decoration: const InputDecoration(
-                      hintText: 'Twoja liczba z zakresu 1-100'),
+                      hintText: 'Twoja liczba z zakresu 1000-2000'),
                   controller: answer,
                   keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
@@ -103,7 +103,7 @@ class _MediumLevelState extends State<MediumLevel> {
               height: 40,
             ),
             Container(
-              color: Colors.green,
+              color: Colors.blue,
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Text(
@@ -113,7 +113,7 @@ class _MediumLevelState extends State<MediumLevel> {
               ),
             ),
             Container(
-              color: Colors.green,
+              color: Colors.blue,
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Text(

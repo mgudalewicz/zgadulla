@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zgadulla/easy/easyLevel.dart';
+import 'package:zgadulla/medium/mediumLevel.dart';
 
 var number = 0;
 var level = '';
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(40.0),
+              margin: const EdgeInsets.all(10.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.green,
@@ -47,6 +48,24 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => EasyLevel(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue,
+                ),
+                child: const Text('Średni'),
+                onPressed: () {
+                  level = 'Poziom Średni';
+                  number = 0;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => MediumLevel(),
                     ),
                   );
                 },

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:zgadulla/easy/easyLevel.dart';
 import 'package:zgadulla/homePage/homePage.dart';
 
 class WinPage extends StatelessWidget {

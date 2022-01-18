@@ -47,6 +47,8 @@ class _EasyLevelState extends State<EasyLevel> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Zapomniałeś czegoś dodać :(';
+                    } else if (int.parse(value) > 100 || int.parse(value) < 1) {
+                      return 'Chyba się pomyliłeś, liczba ma być z zakresu (1-100)';
                     } else if (int.parse(value) < widget.random1) {
                       number += 1;
                       result = "za mało!";
