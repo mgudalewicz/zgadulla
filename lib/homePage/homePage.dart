@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zgadulla/easy/easyLevel.dart';
 
+var number = 0;
+var level = '';
+
 class HomePage extends StatelessWidget {
   const HomePage({
     Key? key,
@@ -34,8 +37,13 @@ class HomePage extends StatelessWidget {
             Container(
               margin: const EdgeInsets.all(40.0),
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                ),
                 child: const Text('Łatwy'),
                 onPressed: () {
+                  level = 'Poziom Łatwy';
+                  number = 0;
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => EasyLevel(),

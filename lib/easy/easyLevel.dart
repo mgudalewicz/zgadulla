@@ -2,9 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:zgadulla/homePage/homePage.dart';
 import 'package:zgadulla/win/winPage.dart';
-
-int number = 0;
 
 class EasyLevel extends StatefulWidget {
   EasyLevel({
@@ -23,7 +22,9 @@ class _EasyLevelState extends State<EasyLevel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green.shade100,
       appBar: AppBar(
+        backgroundColor: Colors.green,
         title: const Text("Poziom: \nŁatwy"),
       ),
       body: Form(
@@ -31,7 +32,7 @@ class _EasyLevelState extends State<EasyLevel> {
         child: ListView(
           children: [
             Container(
-              color: Colors.lightBlue[50],
+              color: Colors.green,
               padding: const EdgeInsets.all(30),
               margin: const EdgeInsets.all(20),
               child: Text(
@@ -40,7 +41,7 @@ class _EasyLevelState extends State<EasyLevel> {
               ),
             ),
             Container(
-              color: Colors.lightBlue[50],
+              color: Colors.green,
               margin: const EdgeInsets.all(20),
               child: TextFormField(
                   validator: (value) {
@@ -73,6 +74,9 @@ class _EasyLevelState extends State<EasyLevel> {
               result.toString(),
             ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.green[800],
+              ),
               child: const Text('Sprawdź'),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
@@ -92,8 +96,29 @@ class _EasyLevelState extends State<EasyLevel> {
                 answer.clear();
               },
             ),
-            const Text('Jest to próba numer:'),
-            Text(number.toString()),
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              color: Colors.green,
+              padding: const EdgeInsets.all(10),
+              child: Center(
+                child: Text(
+                  'Jest to próba numer:',
+                  style: GoogleFonts.lato(fontSize: 20),
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.green,
+              padding: const EdgeInsets.all(10),
+              child: Center(
+                child: Text(
+                  number.toString(),
+                  style: GoogleFonts.lato(fontSize: 40),
+                ),
+              ),
+            ),
           ],
         ),
       ),

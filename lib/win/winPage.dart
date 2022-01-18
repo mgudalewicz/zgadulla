@@ -29,7 +29,12 @@ class WinPage extends StatelessWidget {
               number.toString(),
               style: GoogleFonts.lato(fontSize: 20),
             ),
-            const SizedBox(height: 82),
+            const SizedBox(height: 30),
+            Text(
+              level.toString(),
+              style: GoogleFonts.lato(fontSize: 30),
+            ),
+            const SizedBox(height: 15),
             Center(
               child: Container(
                 margin: const EdgeInsets.all(40.0),
