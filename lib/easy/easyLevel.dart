@@ -46,8 +46,10 @@ class _EasyLevelState extends State<EasyLevel> {
               child: TextFormField(
                   validator: (value) {
                     if (value == null || value.isEmpty) {
+                      result = "Wybierz liczbę z zakresu 1-100";
                       return 'Zapomniałeś czegoś dodać :(';
                     } else if (int.parse(value) > 100 || int.parse(value) < 1) {
+                      result = "Wybierz liczbę z zakresu 1-100";
                       return 'Chyba się pomyliłeś, liczba ma być z zakresu (1-100)';
                     } else if (int.parse(value) < widget.random1) {
                       number += 1;
@@ -106,7 +108,7 @@ class _EasyLevelState extends State<EasyLevel> {
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Text(
-                  'Jest to próba numer:',
+                  'Ilość prób do tego momentu:',
                   style: GoogleFonts.lato(fontSize: 20),
                 ),
               ),

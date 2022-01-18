@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:zgadulla/easy/easyLevel.dart';
+import 'package:zgadulla/hard/hardLevel.dart';
 import 'package:zgadulla/medium/mediumLevel.dart';
 
 var number = 0;
@@ -66,6 +67,24 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => MediumLevel(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+                ),
+                child: const Text('Trudny'),
+                onPressed: () {
+                  level = 'Poziom Trudny';
+                  number = 0;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => HardLevel(),
                     ),
                   );
                 },

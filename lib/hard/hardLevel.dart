@@ -5,16 +5,16 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:zgadulla/homePage/homePage.dart';
 import 'package:zgadulla/win/winPage.dart';
 
-class MediumLevel extends StatefulWidget {
-  MediumLevel({
+class HardLevel extends StatefulWidget {
+  HardLevel({
     Key? key,
   }) : super(key: key);
   @override
-  State<MediumLevel> createState() => _MediumLevelState();
-  final random1 = 1000 + Random().nextInt(1000);
+  State<HardLevel> createState() => _HardLevelState();
+  final random1 = 100000 + Random().nextInt(100000);
 }
 
-class _MediumLevelState extends State<MediumLevel> {
+class _HardLevelState extends State<HardLevel> {
   var result = '';
   var answer = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -22,36 +22,36 @@ class _MediumLevelState extends State<MediumLevel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue.shade100,
+      backgroundColor: Colors.red.shade100,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text("Poziom: \nŚredni"),
+        backgroundColor: Colors.red,
+        title: const Text("Poziom: \nTrudny"),
       ),
       body: Form(
         key: _formKey,
         child: ListView(
           children: [
             Container(
-              color: Colors.blue,
+              color: Colors.red,
               padding: const EdgeInsets.all(30),
               margin: const EdgeInsets.all(20),
               child: Text(
-                'Zgadnij liczbę z zakresu: \n1000-2000',
+                'Zgadnij liczbę z zakresu: \n100000-200000',
                 style: GoogleFonts.lato(fontSize: 20),
               ),
             ),
             Container(
-              color: Colors.blue,
+              color: Colors.red,
               margin: const EdgeInsets.all(20),
               child: TextFormField(
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      result = "Wybierz liczbę z zakresu 1000-2000";
+                      result = "Wybierz liczbę z zakresu 100000-200000";
                       return 'Zapomniałeś czegoś dodać :(';
-                    } else if (int.parse(value) > 2000 ||
-                        int.parse(value) < 1000) {
-                      result = "Wybierz liczbę z zakresu 1000-2000";
-                      return 'Chyba się pomyliłeś, liczba ma być z zakresu (1000-2000)';
+                    } else if (int.parse(value) > 200000 ||
+                        int.parse(value) < 100000) {
+                      result = "Wybierz liczbę z zakresu 100000-200000";
+                      return 'Chyba się pomyliłeś, liczba ma być z zakresu (100000-200000)';
                     } else if (int.parse(value) < widget.random1) {
                       number += 1;
                       result = "za mało!";
@@ -68,7 +68,7 @@ class _MediumLevelState extends State<MediumLevel> {
                     return null;
                   },
                   decoration: const InputDecoration(
-                      hintText: 'Twoja liczba z zakresu 1000-2000'),
+                      hintText: 'Twoja liczba z zakresu 100000-200000'),
                   controller: answer,
                   keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
@@ -80,7 +80,7 @@ class _MediumLevelState extends State<MediumLevel> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue.shade800,
+                primary: Colors.red.shade800,
               ),
               child: const Text('Sprawdź'),
               onPressed: () {
@@ -105,7 +105,7 @@ class _MediumLevelState extends State<MediumLevel> {
               height: 40,
             ),
             Container(
-              color: Colors.blue,
+              color: Colors.red,
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Text(
@@ -115,7 +115,7 @@ class _MediumLevelState extends State<MediumLevel> {
               ),
             ),
             Container(
-              color: Colors.blue,
+              color: Colors.red,
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Text(
